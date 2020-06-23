@@ -115,14 +115,14 @@ cd cli
 Follow the instructions in  `./cli/windows scripts/setup-hosts-file.txt`
 
 ## Install WordPress and Composer packages (plugins/themes)
-
+> i ran this in the main folder( where docker-compose.yml)
 ```shell
 docker-compose run composer install
 ```
 > If you have Composer installed on your computer you can also use `cd src && composer install`
 
 ### Update WordPress Core and Composer packages (plugins/themes)
-
+> i ran this in the main folder( where docker-compose.yml)
 ```shell
 docker-compose run composer update
 ```
@@ -130,7 +130,7 @@ docker-compose run composer update
 ## Run
 
 ```shell
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 Docker Compose will start all the services for you:
@@ -144,6 +144,11 @@ Starting myapp-nginx      ... done
 ```
 
 🚀 Open [https://myapp.local](https://myapp.local) in your browser
+
+Again do this to keep it up:
+```shell
+sudo docker-compose up
+```
 
 ## PhpMyAdmin
 
