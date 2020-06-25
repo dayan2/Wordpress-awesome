@@ -4,6 +4,24 @@
  * This file is required in the root directory so WordPress can find it.
  * WP is hardcoded to look in its own directory or one directory up for wp-config.php.
  */
+
+/* Multisite */
+define( 'WP_ALLOW_MULTISITE', true );
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+define('DOMAIN_CURRENT_SITE', 'myapp.local');
+define('PATH_CURRENT_SITE', '/wp/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/config/application.php';
 require_once ABSPATH . 'wp-settings.php';
+
+//FTP
+define('FS_METHOD','direct');
+//define("FTP_HOST", 'myapp.local');
+//define("FTP_USER", 'dayan');
+//define("FTP_PASS", 'dayan');
+
+
