@@ -1,0 +1,33 @@
+{
+  "name": "Wordpress-awesome",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/urre/wordpress-nginx-docker-compose.svg?branch=master)](https://travis-ci.org/urre/wordpress-nginx-docker-compose)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayan2/Wordpress-awesome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayan2/Wordpress-awesome/issues"
+  },
+  "homepage": "https://github.com/dayan2/Wordpress-awesome#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "laravel-mix": "^5.0.4",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.26.9",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

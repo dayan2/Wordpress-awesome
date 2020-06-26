@@ -245,4 +245,55 @@ Rebuild docker container when Dockerfile has changed
 docker-compose up -d --force-recreate --build
 ```
 
-yes
+### sass integration
+
+> 1. First-line will create package.json
+> 2. install laravel-mix 
+> 3. copy and paste the webpack file from the module folder.
+
+```shell
+npm init -y
+npm install laravel-mix --save-dev
+cp node_modules/laravel-mix/setup/webpack.mix.js ./
+```
+
+> Paste this in the package.json
+
+```shell
+"scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+}
+```
+
+> Paste this in the package.json
+
+```shell
+"scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+}
+```
+
+> install this
+```shell
+npm install cross-env --save-dev
+```
+
+> Do a npm install again
+> Then run the watch
+```shell
+npm run watch
+```
+
+
+
+
